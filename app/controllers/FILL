@@ -1,0 +1,10 @@
+Searching 936 files for "fill_in"
+
+/Users/jasonzhao/Desktop/workspace/sample_app/test/integration/users_signup_test.rb:
+   25      end
+   26      assert_template 'users/show'
+   27:     assert_not flash.empty?
+   28    end
+   29  
+
+1 match in 1 file
