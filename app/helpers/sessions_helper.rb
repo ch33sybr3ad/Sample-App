@@ -1,6 +1,5 @@
 module SessionsHelper
 
-  #logs in a user
   def log_in(user)
     session[:user_id] = user.id
   end
@@ -15,7 +14,6 @@ module SessionsHelper
     user == current_user
   end
 
-  #finds curren log in user if any ||= is to prevent multiple hits on database
   def current_user
     if (user_id = session[:user_id])
        @current_user ||= User.find_by(id: user_id)
@@ -28,7 +26,6 @@ module SessionsHelper
     end
   end
 
-  #checks to see if user is logged in
   def logged_in?
     !current_user.nil?
   end

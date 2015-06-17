@@ -1,7 +1,8 @@
 class StaticPagesController < ApplicationController
 
   def home
-    #rails will execute the code in the home action, and then render the view corresponding to the action
+    @micropost = current_user.microposts.build if logged_in?
+    @feed_items = current_user.feed.paginate(page: params[:page]) if logged_in?
   end
 
   def help
